@@ -1,32 +1,147 @@
-# 🌟 Dino Runner - Desafio de Sobrevivência no Deserto
+# 🦖 Dino AI
+## Alrotimo Evolutivo e Rede Neural Evolutiva para o Jogo do Dinossauro do Chrome
 
-![Demonstração do Jogo](Readme/Dino.gif)
+Este projeto implementa uma **Inteligência Artificial Evolutiva** capaz de jogar um jogo inspirado no **Dinossauro do Google Chrome**.
 
-**Dino Runner** é um emocionante jogo de sobrevivência inspirado no famoso jogo do dinossauro do Google, desenvolvido em Java. O objetivo do jogo é simples: ajude o dinossauro a sobreviver o máximo possível enfrentando uma série de obstáculos. O jogo desafia a habilidade do jogador em desviar de obstáculos aéreos e terrestres, testando seus reflexos e velocidade de reação.
+O agente aprende exclusivamente por meio da interação com o ambiente, utilizando **Redes Neurais** otimizadas por **Algoritmos Evolutivos**, sem regras predefinidas ou comportamentos pré-programados.
 
-## 🚀 Como Jogar:
+> Os agentes sobrevivem, são avaliados pelo desempenho e evoluem ao longo das gerações.
 
-![Captura de Tela](Readme/Capturar.PNG)
+![Demonstração do Jogo](Readme/Dino2.gif)
+---
 
-- **Pule os obstáculos terrestres:** Pressione a tecla **Espaço** para fazer o dinossauro saltar sobre os obstáculos que aparecem no chão.
-- **Abaixar-se para desviar dos obstáculos aéreos:** Pressione a tecla **Seta para baixo** para fazer o dinossauro abaixar e desviar dos obstáculos que voam.
+## 🎯 Objetivo do Projeto
 
-![Captura de Tela](Readme/Capturar2.PNG)
+O objetivo principal é estudar e aplicar conceitos de **Computação Evolutiva** em um ambiente de jogo em tempo real, com foco em:
 
-À medida que o jogo avança, a velocidade e a frequência dos obstáculos aumentam, tornando o desafio cada vez mais emocionante. O objetivo é sobreviver o máximo possível e alcançar a maior pontuação!
+- Tomada de decisão usando **Redes Neurais**
+- Aprendizado por **Algoritmos Evolutivos**
+- Seleção baseada em **aptidão (fitness)**
+- Uso de **elitismo**
+- Adaptação comportamental a diferentes desafios
 
-![Captura de Tela](Readme/Capturar3.PNG)
+Os agentes aprendem sem dados rotulados, apenas por **interação, sobrevivência e desempenho**.
 
-## 🛠️ Funcionalidades:
+---
 
-- **Movimentação fluida:** O dinossauro pode pular e abaixar-se de forma ágil, criando uma experiência dinâmica de jogo.
-- **Obstáculos desafiadores:** Enfrente obstáculos aéreos e terrestres que exigem rapidez e estratégia.
-- **Aumento progressivo de dificuldade:** A cada rodada, os obstáculos se tornam mais rápidos e a sobrevivência mais difícil.
+## 🧠 Como a IA Funciona
 
-## 📚 Tecnologias Utilizadas:
+Cada dinossauro é controlado por sua própria **rede neural**, que recebe informações do estado do jogo e decide qual ação executar em tempo real.
 
-- **Java:** O jogo foi desenvolvido inteiramente em Java, utilizando programação orientada a objetos.
-- **Java Swing:** A interface gráfica foi construída com Java Swing, garantindo uma jogabilidade suave e responsiva.
-- **Controle de Eventos:** As teclas de ação são capturadas de forma eficiente para permitir o controle preciso da movimentação do dinossauro.
+### Entradas da Rede Neural
 
-Pronto, é só jogar e desafiar seus limites no mundo do Dino Runner! Boa sorte na jornada de sobrevivência! 🦖🌵
+As entradas representam o estado atual do jogo:
+
+- Posição do jogador `(X, Y)`
+- Posição do inimigo `(X, Y)`
+- Dimensões do inimigo (altura e largura)
+- Velocidade do inimigo
+
+![Captura de Tela](Readme/Capturar4.PNG)
+
+Todas as entradas são **normalizadas** para manter escalas comparáveis.
+
+---
+
+### Saídas (Ações)
+
+As ações são controladas diretamente pela rede neural:
+
+- Pular
+ <img src="Readme/Capturar5.PNG" alt="Captura de Tela" width="350" height="350">
+
+- Agachar
+ <img src="Readme/Capturar6.PNG" alt="Captura de Tela" width="350" height="350">
+
+Não existe lógica fixa ou regras condicionais.
+
+---
+
+## 🧬 Aprendizado Evolutivo
+
+O aprendizado ocorre por **evolução**, sem uso de backpropagation.
+
+### 🔄 Ciclo de Geração
+
+1. Inicialização da população
+2. Todos os agentes jogam simultaneamente
+3. Avaliação por função de aptidão
+4. Remoção dos piores agentes
+5. Preservação dos melhores por **elitismo**
+6. Criação de novos agentes via **mutação** (e cruzamento opcional)
+7. Repetição do processo por várias gerações
+
+ <img src="Readme/Capturar7.PNG" alt="Captura de Tela" width="450" height="450">
+
+---
+
+## 🏆 Função de Aptidão
+
+A função de aptidão recompensa agentes que:
+
+- Sobrevivem por mais tempo
+- Evitam colisões
+- Reagem corretamente a diferentes tipos de inimigos
+
+São avaliados comportamentos contra:
+
+- Inimigos terrestres
+- Inimigos voadores
+
+Isso evita estratégias repetitivas e estimula adaptação.
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- Java
+- Programação Orientada a Objetos (POO)
+- Rede Neural implementada do zero
+- Algoritmos Evolutivos
+- Java Swing (renderização e loop do jogo)
+- Simulação em tempo real
+
+> Nenhuma biblioteca externa de IA ou Machine Learning foi utilizada.
+
+---
+
+## 🧪 Conceitos Aplicados
+
+- Algoritmos Evolutivos
+- Seleção baseada em aptidão
+- Elitismo
+- Mutação populacional e individual
+- Redes Neurais Multicamadas
+- Normalização de dados
+- Sistemas de decisão em tempo real
+- Avaliação por simulação
+
+---
+
+## 📊 Estado Atual
+
+- ✅ IA evolutiva funcional
+- ✅ Múltiplas gerações simuladas
+- ✅ Inimigos dinâmicos e dificuldade crescente
+- ✅ Monitoramento de fitness (mínimo, máximo e médio)
+- 🚧 Ajustes contínuos de arquitetura e função de aptidão
+
+---
+
+## 📌 Importância do Projeto
+
+Este projeto demonstra:
+
+- Implementação prática de IA sem bibliotecas prontas
+- Projeto de sistemas de aprendizado do zero
+- Domínio de computação evolutiva
+- Experiência com sistemas complexos
+- Aplicação real de conceitos acadêmicos de IA
+
+---
+
+## 👤 Autor
+
+**Guilherme Peres Mundim**  
+Graduando em Sistemas de Informação  
+Foco em Inteligência Artificial, Ciência de Dados e Engenharia de Software
