@@ -1,5 +1,5 @@
 # 🦖 Dino AI
-## Alrotimo Evolutivo e Rede Neural Evolutiva para o Jogo do Dinossauro do Chrome
+## Algoritmo Evolutivo e Rede Neural Evolutiva para o Jogo do Dinossauro do Chrome
 
 Este projeto implementa uma **Inteligência Artificial Evolutiva** capaz de jogar um jogo inspirado no **Dinossauro do Google Chrome**.
 
@@ -47,11 +47,19 @@ Todas as entradas são **normalizadas** para manter escalas comparáveis.
 
 As ações são controladas diretamente pela rede neural:
 
-- Pular
- <img src="Readme/Capturar5.PNG" alt="Captura de Tela" width="350" height="350">
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Pular</b><br>
+      <img src="Readme/Capturar5.PNG" width="350" height="350">
+    </td>
+    <td align="center">
+      <b>Agachar</b><br>
+      <img src="Readme/Capturar6.PNG" width="350" height="350">
+    </td>
+  </tr>
+</table>
 
-- Agachar
- <img src="Readme/Capturar6.PNG" alt="Captura de Tela" width="350" height="350">
 
 Não existe lógica fixa ou regras condicionais.
 
@@ -67,9 +75,11 @@ O aprendizado ocorre por **evolução**, sem uso de backpropagation.
 2. Todos os agentes jogam simultaneamente
 3. Avaliação por função de aptidão
 4. Remoção dos piores agentes
-5. Preservação dos melhores por **elitismo**
-6. Criação de novos agentes via **mutação** (e cruzamento opcional)
-7. Repetição do processo por várias gerações
+5. Preservação dos melhores por **Elitismo**
+6. Seleção de Pais por Seleção por **Roleta**
+7. Criação de novos agentes via **Cruzamento**
+8. Modificação agentes via **Mutação**
+9. Repetição do processo por várias gerações
 
  <img src="Readme/Capturar7.PNG" alt="Captura de Tela" width="450" height="450">
 
@@ -108,8 +118,9 @@ Isso evita estratégias repetitivas e estimula adaptação.
 ## 🧪 Conceitos Aplicados
 
 - Algoritmos Evolutivos
-- Seleção baseada em aptidão
+- Seleção baseada em aptidão/Fitness
 - Elitismo
+- Cruzamento
 - Mutação populacional e individual
 - Redes Neurais Multicamadas
 - Normalização de dados
